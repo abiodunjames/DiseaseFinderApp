@@ -8,9 +8,9 @@ export default ({captures=[]}) => (
         horizontal={true}
         style={[styles.bottomToolbar, styles.galleryContainer]} 
     >
-        {captures.map(({ uri }) => (
+        {captures.map(({data:{uri}, status }) => (
             <View style={styles.galleryImageContainer} key={uri}>
-                <Image source={{ uri }} style={styles.galleryImage} />
+                <Image source={{ uri }} style={styles.galleryImage} borderColor= {status? 'green': 'red'} />
             </View>
         ))}
     </ScrollView>

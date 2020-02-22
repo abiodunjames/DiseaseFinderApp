@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Camera } from 'expo-camera';
+import { Audio } from 'expo-av';
 import styles from './styles';
 import Toolbar from './toolbar.component';
 import Gallery from './gallery.component';
@@ -29,17 +30,40 @@ export default class CameraPage extends React.Component {
 
     handleShortCapture = async () => {
         const photoData = await this.camera.takePictureAsync();
-        this.setState({ capturing: false, captures: [photoData, ...this.state.captures] })
+        const status = await this.handleUpload(photoData)
+        const capture = {data: photoData, status}
+        this.setState({ capturing: false, captures: [capture, ...this.state.captures] })
     };
 
     handleLongCapture = async () => {
         const videoData = await this.camera.recordAsync();
-        this.setState({ capturing: false, captures: [videoData, ...this.state.captures] });
+        const status = await this.handleUpload(videoData)
+        const capture = {data:videoData, status}
+        this.setState({ capturing: false, captures: [capture, ...this.state.captures] });
     };
+
+    handleUpload = async(data) =>{
+        const status = [
+            true,
+           false,
+          ]
+          
+        return status[Math.floor(Math.random() * status.length)];
+
+        try {
+        await fetch('http://example.com', {
+          method: "post",
+          body: data
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    }
 
     async componentDidMount() {
         const camera = await Camera.requestPermissionsAsync();
-        const hasCameraPermission = (camera.status === 'granted');
+        const audio = await Audio.requestPermissionsAsync();
+        const hasCameraPermission = (camera.status === 'granted' && audio.status ==='granted');
         this.setState({ hasCameraPermission });
     };
 
