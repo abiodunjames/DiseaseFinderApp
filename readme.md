@@ -42,8 +42,9 @@ git clone git@github.com:abiodunjames/DiseaseFinderApp.git
 yarn install
 ```
 * Install [expo client](https://expo.io/tools#client)
-Run `expo start` and scan the bardcode to run.
+Run `expo start` in your terminal.
+Use the expo client app to scan the barcode.
 
 ### Unsigned prebuilt app
 
-* [android](https://expo.io/dashboard/abiodunjames/builds/a1f794ba-9e37-423d-90ce-9b7a632600b9)
+* [android](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40abiodunjames/diseasefinder-6cd3e911bdbc4cc79362ad2f572014c9-signed.apk)
