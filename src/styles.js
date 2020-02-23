@@ -4,13 +4,22 @@ const { width: winWidth, height: winHeight } = Dimensions.get("window");
 
 export default StyleSheet.create({
   preview: {
-    height: winHeight,
-    width: winWidth,
+    height: (winHeight - 4),
+    width: (winWidth - 4) ,
     position: "absolute",
     left: 0,
     top: 0,
     right: 0,
-    bottom: 0
+    bottom: 0,
+    borderWidth: 2
+  },
+  greenBorder: {
+    borderColor: "green",
+    backgroundColor:"green"
+  },
+  redBorder: {
+    borderColor: "red",
+    backgroundColor: "red"
   },
   alignCenter: {
     flex: 1,
@@ -22,6 +31,15 @@ export default StyleSheet.create({
     position: "absolute",
     height: 100,
     bottom: 0
+  },
+  bottomBar: {
+    width: winWidth,
+    position: "absolute",
+    height: 50,
+    bottom: 0,
+    borderWidth:2,
+    borderColor: 'white',
+    color:'white'
   },
   captureBtn: {
     width: 60,
@@ -43,7 +61,7 @@ export default StyleSheet.create({
     borderColor: "transparent"
   },
   galleryContainer: {
-    bottom: 100
+    bottom: 35
   },
   galleryImageContainer: {
     width: 75,
@@ -53,6 +71,6 @@ export default StyleSheet.create({
   galleryImage: {
     width: 75,
     height: 75,
-    borderWidth: 2,
+    borderWidth: 2
   }
 });
