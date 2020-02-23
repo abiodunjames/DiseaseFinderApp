@@ -41,10 +41,12 @@ git clone git@github.com:abiodunjames/DiseaseFinderApp.git
 ```
 yarn install
 ```
+* Make sure you configure AUTH and Storage parameter in `aws.config.js`
+
 * Install [expo client](https://expo.io/tools#client)
 Run `expo start` in your terminal.
 Use the expo client app to scan the barcode.
 
 ### Unsigned prebuilt app
 
-* [android](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40abiodunjames/diseasefinder-6cd3e911bdbc4cc79362ad2f572014c9-signed.apk)
+* [android](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40abiodunjames/diseasefinder-7e1efabfe6b2425d99118c0e89abf0cc-signed.apk)
