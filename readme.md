@@ -5,7 +5,7 @@ Disease Finder Machine Learning API | Facebook AI Hackathon - PyTorch & React Na
 
 
 ### Description
-This repository contains the source code of the mobile app we built for this hackathon.  If you're looking for the backend source code written using Pytorch, please [go here](https://github.com/OElesin/disease-finder-api). 
+This repository contains source code for mobile app we built for this hackathon.  If you're looking for the backend source code, please [go here](https://github.com/OElesin/disease-finder-api). 
 
 ### Built With
 - **Infrastructure**: [Amazon Web Services SageMaker](https://aws.amazon.com/sagemaker/)
@@ -29,9 +29,21 @@ This repository contains the source code of the mobile app we built for this hac
 - To not incur costs, we hosted the trained model on a free service provided by [Heroku](https://heroku.com). This service has a high latency. There is usually a huge delay in response time.
 
 
-### Model Usage
-```bash
-$ curl -XPOST -H "Content-Type: application/json" -d '{ "ImageUrl": "https://www.sciencesource.com/Doc/TR1_WATERMARKED/7/5/4/f/SS2839121.jpg?d63644905319" }' https://disease-finder-api.herokuapp.com/invocations 
-```
+### How to run
 
-## 
+* Clone the code repository
+
+```
+git clone git@github.com:abiodunjames/DiseaseFinderApp.git
+```
+* Install npm packages
+
+```
+yarn install
+```
+* Install [expo client](https://expo.io/tools#client)
+Run `expo start` and scan the bardcode to run.
+
+### Unsigned prebuilt app
+
+* [android](https://expo.io/dashboard/abiodunjames/builds/a1f794ba-9e37-423d-90ce-9b7a632600b9)
