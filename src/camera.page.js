@@ -108,7 +108,8 @@ export default class CameraPage extends React.Component {
 
   async subscribe() {
     this.subscription = Accelerometer.addListener(async data => {
-      await this.handleShortCapture();
+      const { capturing } = this.state;
+       capturing ? '': await this.handleShortCapture();
     });
   }
 
@@ -120,7 +121,7 @@ export default class CameraPage extends React.Component {
     const {
       currentStatus,
       borderWidth,
-      prediction, 
+      prediction,
       hasCameraPermission,
       flashMode,
       cameraType,
@@ -145,7 +146,7 @@ export default class CameraPage extends React.Component {
         </View>
         <ErrorBoundary>
           {captures.length > 0 && <Gallery captures={captures} />}
-        </ErrorBoundary> 
+        </ErrorBoundary>
         <Bar
           capturing={capturing}
           flashMode={flashMode}
