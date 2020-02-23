@@ -11,7 +11,7 @@ const { FlashMode: CameraFlashModes, Type: CameraTypes } = Camera.Constants;
 export default ({
   capturing = false,
   currentStatus = false,
-  prediction = null,
+  prediction = "",
   cameraType = CameraTypes.back,
   flashMode = CameraFlashModes.off,
   setFlashMode,
@@ -23,7 +23,7 @@ export default ({
 }) => (
   <Grid
     style={
-      null !== prediction
+      "" !== prediction
         ? [
             styles.bottomBar,
             currentStatus ? styles.greenBorder : styles.redBorder

@@ -16,7 +16,7 @@ export default class CameraPage extends React.Component {
   camera = null;
   state = {
     currentStatus: false,
-    prediction: null,
+    prediction: "",
     borderWidth: 0,
     captures: [],
     // setting flash to be turned off by default
@@ -74,7 +74,7 @@ export default class CameraPage extends React.Component {
       JSON.stringify({ ImageUrl: imageUrl }),
       { headers: { "Content-Type": "application/json" } }
     );
-    const { prediction = null } = response.data;
+    const { prediction = "" } = response.data;
     const status = prediction.includes("healthy");
 
     return { status, prediction };
@@ -109,7 +109,7 @@ export default class CameraPage extends React.Component {
   async subscribe() {
     this.subscription = Accelerometer.addListener(async data => {
       const { capturing } = this.state;
-       capturing ? '': await this.handleShortCapture();
+      capturing ? "" : await this.handleShortCapture();
     });
   }
 
