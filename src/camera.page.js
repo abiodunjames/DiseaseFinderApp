@@ -37,6 +37,7 @@ export default class CameraPage extends React.Component {
 
   handleShortCapture = async () => {
     const options = { quality: 0.3 };
+    this.setState({status:true})
     const photoData = await this.camera.takePictureAsync(options);
     const { status, prediction } = await this.handleUpload(photoData);
     await this.updateAppState(photoData, status, prediction);
