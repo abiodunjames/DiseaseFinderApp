@@ -49,4 +49,4 @@ Use the expo client app to scan the barcode.
 
 ### Unsigned prebuilt app
 
-* [android](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40abiodunjames/diseasefinder-7e1efabfe6b2425d99118c0e89abf0cc-signed.apk)
+* [android](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40abiodunjames/diseasefinder-f33f218b9e794a67a65ddc9c43217fcc-signed.apk)
